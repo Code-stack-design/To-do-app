@@ -11,16 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = theme ? '☀️' : '🌙';
   });
 
-  addBtn.addEventListener('click', () => {
+  addBtn.addEventListener('click', addTask);
+
+  function addTask() {
     const text = input.value.trim();
     if (!text) return;
+
     const li = document.createElement('li');
     li.className = 'task-item';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
 
     const span = document.createElement('span');
     span.className = 'task-text';
     span.textContent = text;
-    span.addEventListener('click', () => span.classList.toggle('completed'));
+
+    checkbox.addEventListener('change', () => {
+      span.classList.toggle('completed', checkbox.checked);
+    });
 
     const btn = document.createElement('button');
     btn.className = 'delete-btn';
@@ -30,11 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => li.remove(), 300);
     });
 
-    li.append(span, btn);
+    li.append(checkbox, span, btn);
     list.appendChild(li);
     input.value = '';
 
-    // trigger animation
     requestAnimationFrame(() => li.classList.add('show'));
-  });
+  }
 });
