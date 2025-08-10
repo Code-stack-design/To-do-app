@@ -10,7 +10,6 @@ Delayed removal animation for polished deletions.
 
 <img width="602" height="597" alt="image" src="https://github.com/user-attachments/assets/048cd667-a389-4d0f-9b5c-baad7f385765" />
 
-
 #Demo Video
 
-
+https://github.com/user-attachments/assets/b3efc7b6-c4fc-47db-aded-bbf9dc0649eb
