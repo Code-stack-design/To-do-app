@@ -1,0 +1,90 @@
+:root {
+  --bg: #fafafa; --fg: #333; --accent: #5c6bc0;
+}
+[data-theme="dark"] {
+  --bg: #2e2e3e; --fg: #eee; --accent: #7986cb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex; justify-content: center; align-items: center;
+  height: 100vh;
+}
+.app-container {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 360px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+#themeToggle {
+  background: none; border: none; font-size: 1.5rem;
+  cursor: pointer; color: var(--accent);
+}
+.input-group {
+  display: flex; margin-top: 1rem;
+}
+.input-group input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 2px solid var(--accent);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+}
+.input-group button {
+  padding: 0 1.2rem;
+  background: var(--accent);
+  color: white; border: none;
+  border-radius: 0 6px 6px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.input-group button:hover {
+  background: darken(var(--accent), 10%);
+}
+#taskList {
+  list-style: none; padding: 0;
+  margin-top: 1.5rem;
+}
+.task-item {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.task-item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.task-item.hide {
+  transform: translateX(50px) scale(0.9);
+  opacity: 0;
+}
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+.delete-btn {
+  background: none; border: none;
+  font-size: 1.2rem; color: #e57373;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.delete-btn:hover {
+  color: #f44336;
+}
