@@ -5,6 +5,7 @@
   --bg: #2e2e3e; --fg: #eee; --accent: #7986cb;
 }
 * { box-sizing: border-box; }
+
 body {
   margin: 0; background: var(--bg); color: var(--fg);
   font-family: 'Segoe UI', sans-serif;
@@ -30,6 +31,8 @@ header h1 {
   background: none; border: none; font-size: 1.5rem;
   cursor: pointer; color: var(--accent);
 }
+
+/* Input + Button */
 .input-group {
   display: flex; margin-top: 1rem;
 }
@@ -51,21 +54,26 @@ header h1 {
   transition: background 0.3s;
 }
 .input-group button:hover {
-  background: darken(var(--accent), 10%);
+  background: #3f51b5;
 }
+
+/* Task List */
 #taskList {
   list-style: none; padding: 0;
   margin-top: 1.5rem;
 }
+
+/* Individual task item */
 .task-item {
   display: flex; align-items: center;
-  justify-content: space-between;
   padding: 0.8rem 1rem;
   margin-bottom: 0.8rem;
   background: rgba(255,255,255,0.6);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, opacity 0.3s;
+  transform: translateY(20px);
+  opacity: 0;
 }
 .task-item.show {
   transform: translateY(0);
@@ -75,10 +83,26 @@ header h1 {
   transform: translateX(50px) scale(0.9);
   opacity: 0;
 }
+
+/* Checkbox styling */
+.task-item input[type="checkbox"] {
+  width: 20px; height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* When task is completed */
+.task-text {
+  flex: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+}
 .task-text.completed {
   text-decoration: line-through;
   color: #888;
 }
+
+/* Delete button */
 .delete-btn {
   background: none; border: none;
   font-size: 1.2rem; color: #e57373;
