@@ -8,8 +8,9 @@ Delayed removal animation for polished deletions.
 
 #Screenshot
 
-<img width="640" height="603" alt="image" src="https://github.com/user-attachments/assets/15b1c502-79b1-4d51-8621-56248c25168c" />
+<img width="602" height="597" alt="image" src="https://github.com/user-attachments/assets/048cd667-a389-4d0f-9b5c-baad7f385765" />
+
 
 #Demo Video
 
-https://github.com/user-attachments/assets/24fa8d4d-9913-4745-a015-f5cb598de721
+
